@@ -1,0 +1,11 @@
+node_modules/
+.pytest_cache/
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+credentials
+*.pem
+*.key
+terraform-old-state-backup/
+build/
