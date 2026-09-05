@@ -13,7 +13,7 @@ The application consists of:
 - **Orchestration:** Amazon EKS
 - **Deployment:** Kubernetes
 - **CI/CD:** GitHub Actions
-- **Region:** AWS `ap-south-2`
+
 
 ## Application URLs
 
