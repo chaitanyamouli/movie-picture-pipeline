@@ -75,7 +75,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: ap-south-2
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -109,7 +109,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: ap-south-2
 
       - name: Install kubectl
         uses: azure/setup-kubectl@v4
@@ -123,13 +123,13 @@ jobs:
         run: |
           aws eks update-kubeconfig \
             --name cluster \
-            --region us-east-1
+            --region ap-south-2
 
       - name: Set Frontend image
         working-directory: starter/frontend/k8s
         run: |
           kustomize edit set image \
-            frontend=634413218714.dkr.ecr.us-east-1.amazonaws.com/frontend:${{ github.sha }}
+            frontend=223956247037.dkr.ecr.ap-south-2.amazonaws.com/frontend:${{ github.sha }}
 
       - name: Deploy Frontend to EKS
         working-directory: starter/frontend/k8s
